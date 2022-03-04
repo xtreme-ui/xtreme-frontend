@@ -1,21 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import ProductList from '@bit/xtreme-ui.urrk.product-list';
-import Asset from '@bit/xtreme-ui.asset.asset';
+import React from "react";
+import AssetsTab from '@bit/xtreme-ui.assets-tab.assets-tab';
+import TopBar from "@bit/xtreme-ui.top-bar.top-bar";
+import StockBar from "@bit/xtreme-ui.top-bar.stock-bar";
+import Accounts from "@bit/xtreme-ui.react.accounts";
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-        
-        <ProductList/>
-        {/* <Asset/> */}
-      </header>
+    <div>
+      <div>
+        <TopBar />
+        <StockBar />
+      </div>
+      <div className="clientPerformance">
+        <Accounts className="accounts" profileId={789}/>
+        <AssetsTab />
+      </div>
     </div>
   );
 }
